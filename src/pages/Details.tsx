@@ -21,7 +21,9 @@ export const Details = () => {
 
     return (
         <div>
-            {item.name}
+            <div>{item.name}</div>
+            <div>{item.description}</div>
+            <div>{item.maximumFuel}</div>
         </div>
     );
 }

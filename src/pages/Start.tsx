@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { query } from "../services/fakeservice";
 
@@ -14,13 +14,13 @@ const useQueryItems = () => {
 }
 
 export const Start = () => {
-    const items = [];
+    const items = useQueryItems;
     return (
         <div>
             {items.map(item => (
                 <div>
                     {item.name}
-                    <Link to={`/details/${item.eid}`}>Details</Link>
+                    <Link className="" to={`/details/${item.eid}`}>Details</Link>
                 </div>
             ))}
         </div>

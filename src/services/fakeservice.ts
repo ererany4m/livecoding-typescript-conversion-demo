@@ -19,12 +19,7 @@ export const query = async () => {
 }
 
 export const get = async (id) => {
-    return new Promise(r => {
-        const items = getItemsFromLocalStorage();
+    const items = getItemsFromLocalStorage();
 
-        r(items.find())
-        // item.id = uuidv4();
-        // items.push(item);
-        // r();
-    });
+    r(items.find(i => i.eid === id));
 };

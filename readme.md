@@ -46,6 +46,10 @@ npm start
 }
 ```
 
+2. Install dev dependency to typescript, ````npm i -D typescript``
+
+2. Add type-check command, "type-check": "tsc"
+
 2. Change vite.config.js to vite.config.ts
 
 3. Change .js files to .ts and .jsx to .tsx
