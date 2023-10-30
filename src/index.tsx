@@ -9,7 +9,10 @@ import { Start } from "./pages/Start";
 import { Details } from "./pages/Details";
 import { Create } from "./pages/Create";
 
-const root = createRoot(document.getElementById("app"));
+const element = document.getElementById("app");
+if(element === null) throw "error";
+
+const root = createRoot(element);
 root.render(
     <React.StrictMode>
         <div className="mx-16 my-16">

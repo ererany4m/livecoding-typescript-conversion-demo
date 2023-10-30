@@ -1,30 +1,33 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Item, save } from "../services/fakeservice";
 
 export const Create = () => {
 
     const navigate = useNavigate();
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<Item>({
+        // id: undefined,
         title: "",
-        descripton: "",
+        description: "",
         maximumFuel: null,
     });
 
-    const handleTitleChange = (e) => {
+    const handleTitleChange = (e: any) => {
         setFormData({ ...formData, title: e.target.value });
     };
 
-    const handleDescriptionChange = (e) => {
-        setFormData({ ...formData, descripton: e.target.value });
+    const handleDescriptionChange = (e: any) => {
+        setFormData({ ...formData, description: e.target.value });
     };
 
-    const handleMaximumFuelChange = (e) => {
-        setFormData({ ...formData, maximumFuel: e.target.value });
+    const handleMaximumFuelChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+        const parsed = parseInt(e.target.value);
+
+        setFormData({ ...formData, maximumFuel: parsed });
     };
 
-    const handleSubmit = async (e) => {
-        debugger
+    const handleSubmit: React.FormEventHandler<HTMLFormElement>  = async (e) => {
         e.preventDefault();
 
         await save(formData);
