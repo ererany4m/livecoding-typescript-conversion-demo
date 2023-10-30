@@ -10,17 +10,19 @@ const useQueryItems = () => {
         (async () => {
             setItems(await query());
         })
-    })
+    });
+
+    return items;
 }
 
 export const Start = () => {
-    const items = [];
+    const items = useQueryItems();
     return (
         <div>
             {items.map(item => (
-                <div>
-                    {item.name}
-                    <Link to={`/details/${item.eid}`}>Details</Link>
+                <div className="border p-4 flex ">
+                    <span className="font-bold">{item.name}</span>
+                    <Link className="text-blue-200 " to={`/details/${item.eid}`}>Details</Link>
                 </div>
             ))}
         </div>

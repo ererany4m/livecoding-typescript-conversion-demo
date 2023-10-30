@@ -15,7 +15,7 @@ export const save = async (item) => {
 export const query = async () => {
     return new Promise(r => {
         r(getItemsFromLocalStorage())
-    })
+    });
 }
 
 export const get = async (id) => {
