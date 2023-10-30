@@ -51,7 +51,7 @@ npm start
 }
 ```
 
-2. Install dev dependency to typescript, ````npm i -D typescript``
+2. Install dev dependency to typescript, ```npm i -D typescript```
 
 3. Add type-check command, "type-check": "tsc"
 3. Add tsc call to build command, "build": "tsc; vite build"
